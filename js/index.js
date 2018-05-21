@@ -77,6 +77,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     button.onclick = function() {
       let functionId = button.id + "SectionScroll";
       navBar[button.id + "SectionScroll"]();
+      for (var k = 0; k < navBar.buttonList.length; k++) {
+        navBar.buttonList[k].className = "";
+      }
+      navBar.buttonList[i].className = "active";
     };
   });
   
