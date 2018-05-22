@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       for (var k = 0; k < navBar.buttonList.length; k++) {
         navBar.buttonList[k].className = "";
       }
-      navBar.buttonList[i].className = "active";
+      button.className = "active";
     };
   });
   
