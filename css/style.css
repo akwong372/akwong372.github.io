@@ -76,6 +76,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color:#e1eef3;
 }
 
 .top-text-title {
@@ -101,7 +102,7 @@ html {
 
 .sub-subtitle {
   font-family: "Noticia Text", serif;
-  font-size: 12px;
+  font-size: 10px;
   clear: both;
   display: block;
   margin-bottom: 100px;
@@ -156,10 +157,13 @@ a img:hover {
   display: block;
   background-color:#c9d9e0;
   padding-bottom: 50px;
+  border-bottom-left-radius: 70% 10%;
+  border-bottom-right-radius: 70% 10%;
 }
 
 .projects-section-spacing{
   margin-bottom: 100px;
+  background-color:#e1eef3;
 }
 
 .dev-icons{
@@ -182,13 +186,16 @@ a img:hover {
   margin-top: -80px;
 }
 
-.contact-spacing {
-  padding: 200px;
-}
-
-a i {
-  margin-left: 10px;
-  margin-right: 10px;
+.grid-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin-bottom: 100px;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: space-evenly;
 }
 
 .fa {
@@ -289,11 +296,8 @@ a i {
     font-size: 35px;
   }
   .fa {
-    font-size: 45px;
+    font-size: 60px;
     padding: 2px;
-  }
-  .contact-spacing {
-    padding: 100px;
   }
   .contact-text {
     font-size: 20px;
