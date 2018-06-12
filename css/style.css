@@ -188,8 +188,9 @@ a img {
 
 .dev-icons{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
   font-size:50px;
 }
 
