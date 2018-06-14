@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
   let navBarButtons = {
     top: document.getElementById("top"),
     about: document.getElementById("about"),
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       navBarButtons.contactSection
     ],
 
-    showMenu: function() {
+    showMenu: function () {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav container-fluid") {
         x.className += " responsive container-fluid";
@@ -35,32 +35,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
         x.className = "topnav container-fluid";
       }
     },
-    barAnimation: function(bars) {
+    barAnimation: function (bars) {
       bars.classList.toggle("change");
     },
 
-    topSectionScroll: function() {
-        navBarButtons.topSection.scrollIntoView({
+    topSectionScroll: function () {
+      navBarButtons.topSection.scrollIntoView({
         block: "start",
         behavior: "smooth"
       })
     },
 
-    aboutSectionScroll: function() {
-        navBarButtons.aboutSection.scrollIntoView({
+    aboutSectionScroll: function () {
+      navBarButtons.aboutSection.scrollIntoView({
         block: "start",
         behavior: "smooth"
       })
     },
 
-    projectsSectionScroll: function() {
+    projectsSectionScroll: function () {
       navBarButtons.projectsSection.scrollIntoView({
         block: "start",
         behavior: "smooth"
       })
     },
 
-    contactSectionScroll: function() {
+    contactSectionScroll: function () {
       navBarButtons.contactSection.scrollIntoView({
         block: "start",
         behavior: "smooth"
@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   };
 
-  navBar.barsIcon.onclick = function() {
+  navBar.barsIcon.onclick = function () {
     navBar.barAnimation(this);
     navBar.showMenu();
   };
- 
-  navBar.buttonList.forEach(function(button) {
-    button.onclick = function() {
+
+  navBar.buttonList.forEach(function (button) {
+    button.onclick = function () {
       let functionId = button.id + "SectionScroll";
       navBar[button.id + "SectionScroll"]();
       for (var k = 0; k < navBar.buttonList.length; k++) {
@@ -83,9 +83,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       button.className = "active";
     };
   });
-  
-  navBar.sectionList.forEach(function(section, i) {
-    section.onmouseover = function() {
+
+  navBar.sectionList.forEach(function (section, i) {
+    section.onmouseover = function () {
       for (var k = 0; k < navBar.buttonList.length; k++) {
         navBar.buttonList[k].className = "";
       }
