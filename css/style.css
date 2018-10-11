@@ -252,6 +252,28 @@ a img {
   bottom: 0;
 }
 
+#top-Button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgb(66, 66, 66);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 35%;
+  font-size: 18px;
+  opacity: 0.8;
+  }
+
+  #top-Button:hover {
+    background-color: rgb(34, 34, 34);
+  }
+
+
 /* for mobile */
 
 @media screen and (max-width: 700px) {

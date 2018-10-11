@@ -85,11 +85,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   navBar.sectionList.forEach(function (section, i) {
-    section.onmouseover = function () {
+    section.onmouseover = function() {
       for (var k = 0; k < navBar.buttonList.length; k++) {
         navBar.buttonList[k].className = "";
       }
       navBar.buttonList[i].className = "active";
     }
   });
+
+  window.onscroll = function() { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+      document.getElementById("top-Button").style.display = "block";
+    } else {
+      document.getElementById("top-Button").style.display = "none";
+    }
+  }
+
+  document.getElementById("top-Button").onclick = function() {
+    navBar.topSectionScroll();
+  }
+
 });
