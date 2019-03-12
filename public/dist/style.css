@@ -221,13 +221,13 @@ a img {
   align-content: space-evenly;
 }
 
-.fa {
+.contact-link {
   font-size: 80px;
   padding: 10px;
   color: #212529;
 }
 
-.fa:hover {
+.contact-link:hover {
   color: black;
 }
 
@@ -354,10 +354,7 @@ a img {
     padding: 5px;
     font-size: 35px;
   }
-  .fa {
-    font-size: 60px;
-    padding: 2px;
-  }
+
   .contact-text {
     font-size: 20px;
   }

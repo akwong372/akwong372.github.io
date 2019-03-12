@@ -1,17 +1,18 @@
 import React from 'react';
 import Navbar from './Navbar.jsx';
 import ExampleApp from './ExampleApp.jsx';
+import ContactLinks from './ContactLinks.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       devIcons: {
-        HTML5: <i class="devicon-html5-plain-wordmark"></i>,
-        CSS3: <i class="devicon-css3-plain-wordmark"></i>,
-        Bootstrap: <i class="devicon-bootstrap-plain-wordmark"></i>,
-        JS: <i class="devicon-javascript-plain"></i>,
-        jQuery: <i class="devicon-jquery-plain-wordmark"></i>,
+        HTML5: <i className="fab fa-html5"/>,
+        CSS3: <i className="fab fa-css3-alt"></i>,
+        Bootstrap: <i className="devicon-bootstrap-plain-wordmark"></i>,
+        JS: <i className="devicon-javascript-plain"></i>,
+        jQuery: <i className="devicon-jquery-plain-wordmark"></i>
       },
       projects: [{
         title: 'A Simon Game Clone',
@@ -29,7 +30,7 @@ class App extends React.Component {
       },
       {
         title: 'A Pomodoro Timer',
-        description: `A timer to be used with the ${<a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" class="pomodoro-link">Pomodoro Technique</a>}. It has a "work" timer and a "break" timer and both can be adjusted in 1 minute increments. An alert sound is played when the "work" timer runs out, and once again when the "break" timer runs out.`,
+        description: `A timer to be used with the Pomodoro Technique. It has a "work" timer and a "break" timer and both can be adjusted in 1 minute increments. An alert sound is played when the "work" timer runs out, and once again when the "break" timer runs out.`,
         technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JS', 'jQuery'],
         link: 'https://codepen.io/niceboat111/full/pLbNwN/',
         image: 'https://i.imgur.com/giQtdYN.png'
@@ -40,7 +41,24 @@ class App extends React.Component {
         technologies: ['HTML5', 'CSS3', 'Bootstrap'],
         link: 'https://akwong372.github.io/survey-form/',
         image: 'https://i.imgur.com/SKYiBQH.png'
-      }]
+      }],
+      contactLinks: [
+        {
+          link: 'https://www.linkedin.com/in/alvin-kwong-8b33ab47/',
+          faIcon: 'fab fa-linkedin contact-link'
+        },
+        {
+          link: 'https://www.freecodecamp.org/akwong372',
+          faIcon: 'fab fa-free-code-camp contact-link'
+        },
+        {
+          link: 'https://github.com/akwong372',
+          faIcon: 'fab fa-github contact-link'
+        },
+        {
+          link: 'https://codepen.io/niceboat111/',
+          faIcon: 'fab fa-codepen contact-link'
+        }]
     }
   }
 
@@ -48,9 +66,9 @@ class App extends React.Component {
 
     var appTabs = this.state.projects.map((project, i) => {
       var icons = [];
-      for (var key in project.technologies) {
-        if (this.state.devIcons[key]) {
-          icons.push(this.state.devIcons[key])
+      for (var k = 0; k < project.technologies.length; k++) {
+        if (this.state.devIcons[project.technologies[k]]) {
+          icons.push(this.state.devIcons[project.technologies[k]])
         }
       }
 
@@ -63,6 +81,10 @@ class App extends React.Component {
         image={project.image}
       />
     });
+
+    var contactLinks = this.state.contactLinks.map((link, i) =>
+      <ContactLinks key={'link'+i} link={link.link} faIcon={link.faIcon} />
+    );
 
     return (
       <div>
@@ -79,18 +101,38 @@ class App extends React.Component {
           <section className="container-fluid pic-and-text" id="about-section">
             <h1 className="title">about</h1>
             <p className="about-text">I'm a self-taught web developer from San Francisco, California.
-        <br /> I have a passion for learning and expanding my coding and design skills.
-        <br /> When I'm not working or studying, I'm probably looking up nonsense on the internet.</p>
+        <br />
+              I have a passion for learning and expanding my coding and design skills.
+        <br />
+              When I'm not working or studying, I'm probably looking up nonsense on the internet.</p>
           </section>
 
           <section className="container-fluid text-center projects-section-spacing" id="projects-section">
             <h1 className="title">projects</h1>
-            <div class="projects-grid">
+            <div className="projects-grid">
               {appTabs}
             </div>
           </section>
 
+          <section className="container-fluid text-center parallax-contacts" id="contact-section">
+            <h1 className="title">contact</h1>
+            <p className="contact-text">Thanks for looking through my page!
+        <br />
+              You can check out more of my work or contact me through the links below.</p>
+            <div className="grid-container-contacts">
+              {contactLinks}
+            </div>
+          </section>
         </article>
+
+        <button id="top-Button" title="Scroll to top">
+          <i className="fas fa-arrow-up"/>
+        </button>
+
+        <footer className="footer-style">
+          <p>Created by
+      <a href="https://github.com/akwong372" target="_blank"> Alvin Kwong</a> © 2018</p>
+        </footer>
       </div>
     );
   }
