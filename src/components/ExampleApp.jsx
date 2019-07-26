@@ -1,14 +1,16 @@
 import React from 'react';
 
-const ExampleApp = (props) => (
-    <div className='project-card'>
-      <h2 className="project-title">{props.title}</h2>
-      <p className="project-description">{props.description}</p>
-      <p className="dev-icons">{props.displayedIcons}</p>
-      <a href={props.link} className="project-image" target="_blank">
-        <img src={props.image} alt={props.title} />
-      </a>
-    </div>
-  );
+const ExampleApp = ({ title, description, displayedIcons, link, image }) => (
+  <div className='project-card'>
+    <h2 className="project-title">{title}</h2>
+    <p className="project-description">{description}</p>
+    <div className="dev-icons">{
+      displayedIcons.map((icon, i) => <div key={title + i}>{icon}</div>)
+    }</div>
+    <a href={link} className="project-image" target="_blank">
+      <img src={image} alt={title} />
+    </a>
+  </div>
+);
 
 export default ExampleApp;

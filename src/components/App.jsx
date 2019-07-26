@@ -86,7 +86,7 @@ class App extends React.Component {
       }
 
       return <ExampleApp
-        key={'project' + i}
+        key={`project${i}`}
         title={project.title}
         description={project.description}
         displayedIcons={icons}
@@ -103,6 +103,7 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
+        <div id="particles-js"></div>
         <article>
           <section className="parallax container-fluid" id="top-section">
             <h1 className="title top-text-title">hi.</h1>
@@ -123,7 +124,7 @@ class App extends React.Component {
 
           <section className="container-fluid text-center projects-section-spacing" id="projects-section">
             <h1 className="title">projects</h1>
-            <div className="projects-grid">
+            <div className="projects-grid" key='wat'>
               {appTabs}
             </div>
           </section>

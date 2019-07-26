@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
+  particlesJS.load('particles-js', 'assets/particles.json', function () {
+  });
+
   let navBarButtons = {
     top: document.getElementById("top"),
     about: document.getElementById("about"),
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   navBar.sectionList.forEach(function (section, i) {
-    section.onmouseover = function() {
+    section.onmouseover = function () {
       for (var k = 0; k < navBar.buttonList.length; k++) {
         navBar.buttonList[k].className = "";
       }
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
 
-  window.onscroll = function() { scrollFunction() };
+  window.onscroll = function () { scrollFunction() };
 
   function scrollFunction() {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
@@ -103,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 
-  document.getElementById("top-Button").onclick = function() {
+  document.getElementById("top-Button").onclick = function () {
     navBar.topSectionScroll();
   }
 
