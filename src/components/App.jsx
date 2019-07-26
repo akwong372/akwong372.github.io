@@ -8,30 +8,43 @@ class App extends React.Component {
     super(props);
     this.state = {
       devIcons: {
-        HTML5: <i className="fab fa-html5"/>,
-        CSS3: <i className="fab fa-css3-alt"></i>,
-        Bootstrap: <i className="devicon-bootstrap-plain-wordmark"></i>,
-        JS: <i className="devicon-javascript-plain"></i>,
-        jQuery: <i className="devicon-jquery-plain-wordmark"></i>
+        HTML5: <i className="icon-html5-alt"/>,
+        CSS3: <i className="icon-css3-alt"/>,
+        Bootstrap: <i className="icon-bootstrap"/>,
+        JavaScript: <i className="icon-javascript-alt"/>,
+        jQuery: <i className="icon-jquery"/>,
+        AWS: <i class="icon-aws"/>,
+        Node: <i className="icon-nodejs"/>,
+        React: <i className="icon-reactjs"/>,
+        nginx: <i className="icon-nginx-alt"/>,
+        MongoDB: <i className="icon-mongodb"/>,
+        Redis: <i className="icon-redis"/>
       },
       projects: [{
+        title: 'A Video Player Microservice',
+        description: 'Video player microservice for a vimeo clone designed with service oriented architecture. A responsive front end built with React, Bootstrap, and some custom CSS. The back end was built with Express/Node and deployed to AWS EC2, load balanced with nginx, and cached responses with Redis. Service could handle up to 3000 requests per second with < 1% error rate and ~120ms response rate while querying a database of ~10 million entries.',
+        technologies: ['React', 'JavaScript', 'Bootstrap', 'Node', 'nginx', 'MongoDB', 'Redis', 'AWS'],
+        link: 'https://www.youtube.com/watch?v=3vibmxLCIvs&feature=youtu.be',
+        image: 'https://github.com/sdc-windsor/video-player/blob/master/VidNavSm.gif?raw=true'
+      },
+      {
         title: 'A Simon Game Clone',
         description: 'A memory game based on the Simon toy. The player matches color/sound cues in sequence Written mostly in Javascript and without jQuery as a way to improve my ability with vanilla Javascript.',
-        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JS'],
+        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
         link: 'https://codepen.io/niceboat111/full/BxjPMy/',
         image: 'https://i.imgur.com/KrH4bgU.png'
       },
       {
         title: 'A Twitch Stream Status Viewer',
-        description: `This is a simple app for keeping track of a preset list of channels from the Twitch website. Online channels will display their status message while offline channels will display "offline". Users can toggle between seeing only online channels, offline channels, or both. The status and portrait for each channel are accessed through a modified link to Twitch's API using 'jQuery''s AJAX calls.`,
-        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JS', 'jQuery'],
+        description: `This is a simple app for keeping track of a preset list of channels from the Twitch website. Online channels will display their status message while offline channels will display "offline". Users can toggle between seeing only online channels, offline channels, or both. The status and portrait for each channel are accessed through a modified link to Twitch's API using jQuery's AJAX calls.`,
+        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'jQuery'],
         link: 'https://codepen.io/niceboat111/full/MGWYKg/',
         image: 'https://i.imgur.com/QZPxk0u.png'
       },
       {
         title: 'A Pomodoro Timer',
         description: `A timer to be used with the Pomodoro Technique. It has a "work" timer and a "break" timer and both can be adjusted in 1 minute increments. An alert sound is played when the "work" timer runs out, and once again when the "break" timer runs out.`,
-        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JS', 'jQuery'],
+        technologies: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'jQuery'],
         link: 'https://codepen.io/niceboat111/full/pLbNwN/',
         image: 'https://i.imgur.com/giQtdYN.png'
       },
@@ -77,13 +90,14 @@ class App extends React.Component {
         title={project.title}
         description={project.description}
         displayedIcons={icons}
+        technologies={project.technologies}
         link={project.link}
         image={project.image}
       />
     });
 
     var contactLinks = this.state.contactLinks.map((link, i) =>
-      <ContactLinks key={'link'+i} link={link.link} faIcon={link.faIcon} />
+      <ContactLinks key={'link' + i} link={link.link} faIcon={link.faIcon} />
     );
 
     return (
@@ -93,18 +107,18 @@ class App extends React.Component {
           <section className="parallax container-fluid" id="top-section">
             <h1 className="title top-text-title">hi.</h1>
             <h2 className="subtitle">i'm alvin
-        <br /> and i'm a front-end
-        <br /> web developer.</h2>
+        <br /> and i'm a software
+        <br /> engineer.</h2>
             <h3 className="sub-subtitle">(no chipmunk jokes, please)</h3>
           </section>
 
           <section className="container-fluid pic-and-text" id="about-section">
             <h1 className="title">about</h1>
-            <p className="about-text">I'm a self-taught web developer from San Francisco, California.
+            <p className="about-text">I'm a full stack software engineer from San Francisco, California with a background
         <br />
-              I have a passion for learning and expanding my coding and design skills.
+        in JavaScript and experience building, deploying, and scaling web applications.
         <br />
-              When I'm not working or studying, I'm probably looking up nonsense on the internet.</p>
+              When I'm not working or studying, I might be soldering together a Nerf blaster or looking up nonsense on the internet.</p>
           </section>
 
           <section className="container-fluid text-center projects-section-spacing" id="projects-section">
@@ -126,7 +140,7 @@ class App extends React.Component {
         </article>
 
         <button id="top-Button" title="Scroll to top">
-          <i className="fas fa-arrow-up"/>
+          <i className="fas fa-arrow-up" />
         </button>
 
         <footer className="footer-style">
