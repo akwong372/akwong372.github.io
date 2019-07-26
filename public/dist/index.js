@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   particlesJS.load('particles-js', 'assets/particles.json', function () {
-    console.log('callback - particles.js config loaded');
   });
 
   let navBarButtons = {
