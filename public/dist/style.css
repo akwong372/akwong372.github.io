@@ -180,11 +180,10 @@ a img {
 }
 
 .pic-and-text {
+  margin-top: 20em;
   clear: both;
   display: block;
   padding-bottom: 50px;
-  border-bottom-left-radius: 70% 10%;
-  border-bottom-right-radius: 70% 10%;
 }
 
 .projects-section-spacing{
