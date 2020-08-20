@@ -260,14 +260,15 @@ a img {
   position: fixed;
   bottom: 20px;
   right: 30px;
+  height: 45px;
+  width: 45px;
   z-index: 99;
   border: none;
   outline: none;
   background-color: rgb(66, 66, 66);
   color: white;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 35%;
+  border-radius: 50%;
   font-size: 18px;
   opacity: 0.8;
   }
