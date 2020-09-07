@@ -18,9 +18,17 @@ class App extends React.Component {
         React: <i className="icon-reactjs" />,
         nginx: <i className="icon-nginx-alt" />,
         MongoDB: <i className="icon-mongodb" />,
-        Redis: <i className="icon-redis" />
+        Redis: <i className="icon-redis" />,
+        Sass: <i className="fab fa-sass"/>
       },
       projects: [
+        {
+          title: 'Pizza Dom',
+          description: 'An app created to specifically order one large Philly cheese steak pizza from your closest Domino\'s Pizza store. Built using React, React-Router, Express/Node, and styled with Sass. The store location and payments are handled using the Domino\'s API.',
+          technologies: ['React', 'Node', 'Sass'],
+          link: 'https://github.com/akwong372/pizza-dom',
+          image: 'https://i.imgur.com/9HJF2Vs.gif'
+        },
         {
           title: 'Keeper',
           description: 'A clone of Google Keep, but also featuring the ability to log in and out using Passport.js. The ability to log in using a Google account through OAuth 2.0 was also added. User accounts and notes are stored using MongoDB Atlas and the app is currently deployed to Heroku.',
