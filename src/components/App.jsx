@@ -23,10 +23,10 @@ class App extends React.Component {
       },
       projects: [
         {
-          title: 'Pizza Dom',
+          title: 'Pizza Thing',
           description: 'An app created to specifically order one large Philly cheese steak pizza from your closest Domino\'s Pizza store. Built using React, React-Router, Express/Node, and styled with Sass. The store location and payments are handled using the Domino\'s API.',
           technologies: ['React', 'Node', 'Sass'],
-          link: 'https://github.com/akwong372/pizza-dom',
+          link: 'https://github.com/akwong372/pizza-thing',
           image: 'https://i.imgur.com/9HJF2Vs.gif'
         },
         {
